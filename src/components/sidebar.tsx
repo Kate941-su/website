@@ -29,9 +29,9 @@ export const Sidebar = (): JSX.Element => {
 
 const navigation = [
   { name: 'nav.about', href: "/", icon: User },
-  { name: 'nav.portfolio', href: "/publications", icon: BookOpen },
-  { name: 'nav.blog', href: "/portfolio", icon: FolderOpen },
-  { name: 'nav.cv', href: "/blog", icon: PenTool },
+  { name: 'nav.portfolio', href: "/portfolio", icon: BookOpen },
+  { name: 'nav.blog', href: "/blog", icon: FolderOpen },
+  { name: 'nav.cv', href: "/cv", icon: PenTool },
 ];
 
 const socialLinks = [
