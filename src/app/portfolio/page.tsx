@@ -1,56 +1,22 @@
+'use client';
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink, Github, FolderOpen } from "lucide-react";
-
-interface Project {
-  title: string;
-  description: string;
-  image?: string;
-  technologies: string[];
-  githubUrl?: string;
-  demoUrl?: string;
-  year: number;
-}
-
-const projects: Project[] = [
-  {
-    title: "Research Project 1",
-    description:
-      "A comprehensive research project involving data analysis and machine learning techniques to solve real-world problems. This project demonstrates the application of advanced algorithms in practical scenarios.",
-    image: "/project1.jpg",
-    technologies: ["Python", "TensorFlow", "Jupyter", "Pandas"],
-    githubUrl: "https://github.com/yourusername/project1",
-    demoUrl: "https://demo.project1.com",
-    year: 2024,
-  },
-  {
-    title: "Academic Tool",
-    description:
-      "An open-source tool developed to assist researchers and academics in their work. Features include data visualization, statistical analysis, and collaborative features.",
-    image: "/project2.jpg",
-    technologies: ["React", "Node.js", "D3.js", "MongoDB"],
-    githubUrl: "https://github.com/yourusername/project2",
-    year: 2023,
-  },
-  {
-    title: "Data Analysis Pipeline",
-    description:
-      "A robust data processing pipeline designed for large-scale academic research. Includes automated data collection, cleaning, and analysis capabilities.",
-    technologies: ["Python", "Docker", "PostgreSQL", "Apache Airflow"],
-    githubUrl: "https://github.com/yourusername/project3",
-    year: 2023,
-  },
-];
+import projects from "@/project_article/project_list";
+import { getProjectString } from "@/model/project";
+import { useTranslation } from "react-i18next";
 
 export default function Portfolio(): JSX.Element {
+  const { t } = useTranslation();
   return (
     <div className="container mx-auto px-6 py-8">
       <div className="max-w-6xl">
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">Portfolio</h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-8">
+          {t('portfolio.title')}
+        </h1>
 
         <p className="text-lg text-gray-600 mb-12">
-          Here are some of the projects I've worked on, ranging from research
-          tools to data analysis pipelines. Each project represents a different
-          aspect of my academic and technical interests.
+          {t('portfolio.description')}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -68,6 +34,7 @@ export default function Portfolio(): JSX.Element {
                   <div>
                     <CardTitle className="text-lg">{project.title}</CardTitle>
                     <p className="text-sm text-gray-500 mt-1">{project.year}</p>
+                    <p className="text-base text-gray-500 mt-1">{getProjectString(project.projectType)}</p>
                   </div>
                   <div className="flex gap-2">
                     {project.githubUrl && (

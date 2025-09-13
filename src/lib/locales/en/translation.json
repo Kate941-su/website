@@ -35,6 +35,10 @@
       "october": "Started new research project on Topic"
     }
   },
+  "portfolio": {
+    "title": "Portfolio",
+    "description": "The following projects are my indivisual developement results."
+  },
   "sidebar": {
     "profile": {
       "title": "Profile",

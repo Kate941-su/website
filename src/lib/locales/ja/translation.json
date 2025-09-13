@@ -35,6 +35,10 @@
       "october": "Started new research project on Topic"
     }
   },
+  "portfolio": {
+    "title": "ポートフォリオ",
+    "description": "以下のプロジェクトは私の個人的な開発成果です。"
+  },
   "sidebar": {
     "profile": {
       "title": "プロフィール",
