@@ -33,6 +33,63 @@
       "october": "Comenzé nuevo proyecto de investigación sobre Tema"
     }
   },
+  "sidebar": {
+    "profile": {
+      "title": "Perfil",
+      "name": "Dr. Juan García",
+      "position": "Investigador Principal",
+      "institution": "Nombre de Universidad",
+      "department": "Departamento de Ciencias de la Computación",
+      "email": "Correo Electrónico",
+      "phone": "Teléfono",
+      "office": "Oficina",
+      "officeHours": "Horario de Atención"
+    },
+    "quickLinks": {
+      "title": "Enlaces Rápidos",
+      "researchGate": "ResearchGate",
+      "googleScholar": "Google Scholar",
+      "orcid": "ORCID",
+      "linkedIn": "LinkedIn",
+      "twitter": "Twitter",
+      "github": "GitHub"
+    },
+    "currentProjects": {
+      "title": "Proyectos Actuales",
+      "project1": "IA en Salud",
+      "project2": "Optimización de Aprendizaje Automático",
+      "project3": "Aplicaciones de Ciencia de Datos",
+      "viewAll": "Ver Todos los Proyectos"
+    },
+    "recentPublications": {
+      "title": "Publicaciones Recientes",
+      "publication1": "Aprendizaje Profundo para Imágenes Médicas (2024)",
+      "publication2": "Avances en Redes Neuronales (2023)",
+      "publication3": "Ética de IA y Sociedad (2023)",
+      "viewAll": "Ver Todas las Publicaciones"
+    },
+    "awards": {
+      "title": "Premios y Reconocimientos",
+      "award1": "Premio al Mejor Artículo 2024",
+      "award2": "Excelencia en Investigación 2023",
+      "award3": "Beca de Investigador Joven 2022",
+      "viewAll": "Ver Todos los Premios"
+    },
+    "statistics": {
+      "title": "Métricas de Investigación",
+      "publications": "Publicaciones",
+      "citations": "Citaciones",
+      "hIndex": "Índice H",
+      "projects": "Proyectos Activos"
+    },
+    "news": {
+      "title": "Últimas Noticias",
+      "news1": "Aceptado en ICML 2024",
+      "news2": "Nueva financiación de beca recibida",
+      "news3": "Conferencia en evento de IA",
+      "viewAll": "Ver Todas las Noticias"
+    }
+  },
   "common": {
     "loading": "Cargando...",
     "error": "Ocurrió un error",
