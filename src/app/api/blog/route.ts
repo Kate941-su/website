@@ -1,11 +1,9 @@
 import { NextResponse } from "next/server";
-import postList from "@/blog_article/post_list";
+import { loadMarkdownPosts } from "@/blog_article/md-reader";
 
 export async function GET(): Promise<NextResponse> {
   try {
-    const posts = postList
-      .filter(post => post.published)
-      .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+    const posts = loadMarkdownPosts().filter(post => post.published);
 
     return NextResponse.json({ posts });
   } catch (error) {

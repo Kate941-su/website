@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import postList from "@/blog_article/post_list";
+import { loadMarkdownPosts } from "@/blog_article/md-reader";
 
 interface Params {
   id: string;
@@ -12,7 +12,8 @@ export async function GET(
   try {
     const { id } = params;
 
-    const post = postList.find(p => p.slug === id && p.published);
+    const posts = loadMarkdownPosts();
+    const post = posts.find(p => p.slug === id && p.published);
 
     if (!post) {
       return NextResponse.json(

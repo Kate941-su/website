@@ -2,8 +2,17 @@
 
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import postList from "@/blog_article/post_list";
-// import { useBlogPosts } from "@/hooks/useBlogPosts";
+import { useEffect, useState } from "react";
+
+interface BlogPost {
+  id: string;
+  title: string;
+  excerpt: string;
+  slug: string;
+  tags: string[];
+  createdAt: string;
+  readTime: string;
+}
 
 export default function Blog(): JSX.Element {
   // const { data, isLoading, error } = useBlogPosts();
@@ -59,7 +68,74 @@ export default function Blog(): JSX.Element {
   //   );
   // }
 
-  // const blogPosts = data?.posts || [];
+  const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetch('/api/blog')
+      .then(res => res.json())
+      .then(data => {
+        setPosts(data.posts || []);
+        setIsLoading(false);
+      })
+      .catch(err => {
+        setError(err.message);
+        setIsLoading(false);
+      });
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="container mx-auto px-6 py-8">
+        <div className="max-w-4xl">
+          <div className="mb-12">
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">Blog</h1>
+            <p className="text-lg text-gray-600">
+              Thoughts, insights, and reflections on research, academia, and
+              technology.
+            </p>
+          </div>
+          <div className="space-y-8">
+            {[1, 2, 3].map((i) => (
+              <Card key={i} className="animate-pulse">
+                <CardHeader>
+                  <div className="h-6 bg-gray-200 rounded mb-2"></div>
+                  <div className="h-4 bg-gray-200 rounded w-1/4"></div>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    <div className="h-4 bg-gray-200 rounded"></div>
+                    <div className="h-4 bg-gray-200 rounded"></div>
+                    <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="container mx-auto px-6 py-8">
+        <div className="max-w-4xl">
+          <Card className="border-red-200">
+            <CardContent className="p-8 text-center">
+              <h1 className="text-xl font-semibold text-red-800 mb-2">
+                Error Loading Blog Posts
+              </h1>
+              <p className="text-red-600">
+                Unable to load blog posts. Please try again later.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container mx-auto px-6 py-8">
@@ -73,14 +149,14 @@ export default function Blog(): JSX.Element {
         </div>
 
         <div className="space-y-8">
-          {postList.map((post) => (
+          {posts.map((post) => (
             <Card key={post.id} className="hover:shadow-md transition-shadow">
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <CardTitle className="text-xl mb-2">
                       <Link
-                        href={`/blog/${post.id}`}
+                        href={`/blog/${post.slug}`}
                         className="text-blue-700 hover:text-blue-800 transition-colors"
                       >
                         {post.title}
@@ -115,7 +191,7 @@ export default function Blog(): JSX.Element {
 
                 <div className="mt-4">
                   <Link
-                    href={`/blog/${post.id}`}
+                    href={`/blog/${post.slug}`}
                     className="text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors"
                   >
                     Read more →

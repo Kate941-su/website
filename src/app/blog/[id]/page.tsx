@@ -1,17 +1,51 @@
 'use client'
 
 import { useParams } from 'next/navigation'
-import { useBlogPost } from '@/hooks/useBlogPosts'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent } from '@/components/ui/card'
 import { ArrowLeft, Calendar, Clock, User } from 'lucide-react'
 import Link from 'next/link'
 import Markdown from 'react-markdown'
 import remarkGfm from "remark-gfm"
-import postList from '@/blog_article/post_list'
+import { useEffect, useState } from 'react'
+
+interface BlogPost {
+  id: string;
+  title: string;
+  content: string;
+  excerpt: string;
+  slug: string;
+  tags: string[];
+  author: string;
+  createdAt: string;
+  readTime: string;
+}
+
 
 export default function BlogPostPage(): JSX.Element {
   const params = useParams()
-  // const { data, isLoading, error } = useBlogPost(id)
+  const [post, setPost] = useState<BlogPost | null>(null)
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (params.id) {
+      fetch(`/api/blog/${params.id}`)
+        .then(res => {
+          if (!res.ok) {
+            throw new Error('Post not found')
+          }
+          return res.json()
+        })
+        .then(data => {
+          setPost(data.post)
+          setIsLoading(false)
+        })
+        .catch(err => {
+          setError(err.message)
+          setIsLoading(false)
+        })
+    }
+  }, [params.id])
 
   // if (isLoading) {
   //   return (
@@ -58,10 +92,7 @@ export default function BlogPostPage(): JSX.Element {
   //   )
   // }
 
-  // const { post } = data
-  const post = postList.find((e) => params.id == e.id)
-
-  if (post == undefined) {
+  if (error || !post) {
     return (
       <div className="container mx-auto px-6 py-8">
         <div className="max-w-4xl">
@@ -129,7 +160,7 @@ export default function BlogPostPage(): JSX.Element {
             </div>
 
             <div className="flex flex-wrap gap-2">
-              {post.tags.map((tag, index) => (
+              {post.tags.map((tag: string, index: number) => (
                 <span
                   key={index}
                   className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full"
