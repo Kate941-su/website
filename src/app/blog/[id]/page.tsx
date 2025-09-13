@@ -92,6 +92,26 @@ export default function BlogPostPage(): JSX.Element {
   //   )
   // }
 
+  if (isLoading) {
+    return (
+      <div className="container mx-auto px-6 py-8">
+        <div className="max-w-4xl">
+          <div className="animate-pulse">
+            <div className="h-8 bg-gray-200 rounded mb-4"></div>
+            <div className="h-4 bg-gray-200 rounded mb-2"></div>
+            <div className="h-4 bg-gray-200 rounded mb-2"></div>
+            <div className="h-4 bg-gray-200 rounded mb-6 w-3/4"></div>
+            <div className="space-y-4">
+              <div className="h-4 bg-gray-200 rounded"></div>
+              <div className="h-4 bg-gray-200 rounded"></div>
+              <div className="h-4 bg-gray-200 rounded w-5/6"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   if (error || !post) {
     return (
       <div className="container mx-auto px-6 py-8">
@@ -99,10 +119,10 @@ export default function BlogPostPage(): JSX.Element {
           <Card className="border-red-200">
             <CardContent className="p-8 text-center">
               <h1 className="text-xl font-semibold text-red-800 mb-2">
-                Post Not Found
+                {error ? 'Error Loading Post' : 'Post Not Found'}
               </h1>
               <p className="text-red-600 mb-4">
-                The blog post you're looking for doesn't exist or has been removed.
+                {error || "The blog post you're looking for doesn't exist or has been removed."}
               </p>
               <Link
                 href="/blog"
