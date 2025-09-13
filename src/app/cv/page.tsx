@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Download } from "lucide-react";
+import { educationList } from "./education_list";
 
 export default function CV(): JSX.Element {
   return (
@@ -8,7 +9,7 @@ export default function CV(): JSX.Element {
         <div className="flex items-center justify-between mb-8">
           <h1 className="text-3xl font-bold text-gray-900">Curriculum Vitae</h1>
           <a
-            href="/cv.pdf"
+            href="../../../static/document/cv.pdf"
             download
             className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >
@@ -23,7 +24,21 @@ export default function CV(): JSX.Element {
             Education
           </h2>
           <div className="space-y-4">
+            {educationList.map((education) => (
             <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">{education.title}</CardTitle>
+                <div className="text-gray-600 text-sm">
+                  <p>{education.university_name} | {education.started_at.getFullYear()} - {education.ended_at.getFullYear()}</p>
+                  <p className="mt-1">
+                    <strong>Description: </strong> {education.description}
+                  </p>
+                </div>
+              </CardHeader>
+            </Card>
+            ))
+            } 
+            {/* <Card>
               <CardHeader>
                 <CardTitle className="text-lg">Ph.D. in Your Field</CardTitle>
                 <div className="text-gray-600 text-sm">
@@ -60,7 +75,7 @@ export default function CV(): JSX.Element {
                   </p>
                 </div>
               </CardHeader>
-            </Card>
+            </Card> */}
           </div>
         </section>
 
