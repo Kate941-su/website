@@ -1,6 +1,7 @@
-import { BlogPost } from "@/lib/mongodb/models";
+import { v4 as uuidv4 } from "uuid";
 
-const post_20250913 = {
+const post_20250913: Blog = {
+  id: uuidv4(),
   title: "Getting Started with Academic Research",
   content: `# Getting Started with Academic Research
 

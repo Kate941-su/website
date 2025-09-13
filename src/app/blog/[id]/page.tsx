@@ -7,33 +7,61 @@ import { ArrowLeft, Calendar, Clock, User } from 'lucide-react'
 import Link from 'next/link'
 import Markdown from 'react-markdown'
 import remarkGfm from "remark-gfm"
+import postList from '@/blog_article/post_list'
 
 export default function BlogPostPage(): JSX.Element {
   const params = useParams()
-  const id = params.id as string
+  // const { data, isLoading, error } = useBlogPost(id)
 
-  const { data, isLoading, error } = useBlogPost(id)
+  // if (isLoading) {
+  //   return (
+  //     <div className="container mx-auto px-6 py-8">
+  //       <div className="max-w-4xl">
+  //         <div className="animate-pulse">
+  //           <div className="h-8 bg-gray-200 rounded mb-4"></div>
+  //           <div className="h-4 bg-gray-200 rounded mb-2"></div>
+  //           <div className="h-4 bg-gray-200 rounded mb-8"></div>
+  //           <div className="space-y-4">
+  //             <div className="h-4 bg-gray-200 rounded"></div>
+  //             <div className="h-4 bg-gray-200 rounded"></div>
+  //             <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   )
+  // }
 
-  if (isLoading) {
-    return (
-      <div className="container mx-auto px-6 py-8">
-        <div className="max-w-4xl">
-          <div className="animate-pulse">
-            <div className="h-8 bg-gray-200 rounded mb-4"></div>
-            <div className="h-4 bg-gray-200 rounded mb-2"></div>
-            <div className="h-4 bg-gray-200 rounded mb-8"></div>
-            <div className="space-y-4">
-              <div className="h-4 bg-gray-200 rounded"></div>
-              <div className="h-4 bg-gray-200 rounded"></div>
-              <div className="h-4 bg-gray-200 rounded w-3/4"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  }
+  // if (error || !data?.post) {
+  //   return (
+  //     <div className="container mx-auto px-6 py-8">
+  //       <div className="max-w-4xl">
+  //         <Card className="border-red-200">
+  //           <CardContent className="p-8 text-center">
+  //             <h1 className="text-xl font-semibold text-red-800 mb-2">
+  //               Post Not Found
+  //             </h1>
+  //             <p className="text-red-600 mb-4">
+  //               The blog post you're looking for doesn't exist or has been removed.
+  //             </p>
+  //             <Link
+  //               href="/blog"
+  //               className="inline-flex items-center text-blue-600 hover:text-blue-800"
+  //             >
+  //               <ArrowLeft className="w-4 h-4 mr-2" />
+  //               Back to Blog
+  //             </Link>
+  //           </CardContent>
+  //         </Card>
+  //       </div>
+  //     </div>
+  //   )
+  // }
 
-  if (error || !data?.post) {
+  // const { post } = data
+  const post = postList.find((e) => params.id == e.id)
+
+  if (post == undefined) {
     return (
       <div className="container mx-auto px-6 py-8">
         <div className="max-w-4xl">
@@ -59,7 +87,6 @@ export default function BlogPostPage(): JSX.Element {
     )
   }
 
-  const { post } = data
 
   return (
     <div className="container mx-auto px-6 py-8">

@@ -1,4 +1,7 @@
-const post_20250912 = {
+import { v4 as uuidv4 } from "uuid";
+
+const post_20250912: Blog = {
+  id: uuidv4(),
   title: "Data Analysis Best Practices",
   content: `# Data Analysis Best Practices
 

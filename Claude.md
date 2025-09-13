@@ -42,12 +42,12 @@
 
 ## ⚙️ Dev Commands
 
-- **Dev server**: `pnpm dev`
-- **Build**: `pnpm build`
-- **Start**: `pnpm start`
-- **Lint**: `pnpm lint`
-- **Format**: `pnpm format`
-- **Test**: `pnpm test`
+- **Dev server**: `npm dev`
+- **Build**: `npm build`
+- **Start**: `npm start`
+- **Lint**: `npm lint`
+- **Format**: `npm format`
+- **Test**: `npm test`
 
 ## 🧠 Claude Code Usage
 
