@@ -1,11 +1,13 @@
 {
+  "myself": {
+    "name": "Kaito Kitaya",
+    "job_title": "Software Engineer"
+  },
   "nav": {
-    "home": "Home",
-    "blog": "Blog",
+    "about": "About",
     "portfolio": "Portfolio",
-    "publications": "Publications",
-    "cv": "CV",
-    "admin": "Admin"
+    "blog": "Blog",
+    "cv": "CV"
   },
   "home": {
     "title": "Welcome to My Academic Portfolio",

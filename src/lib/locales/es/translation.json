@@ -1,4 +1,8 @@
 {
+  "myself": {
+    "name": "Kaito Kitaya",
+    "job_title": "Software Engineer"
+  },
   "nav": {
     "home": "Inicio",
     "blog": "Blog",

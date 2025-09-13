@@ -1,5 +1,8 @@
 "use client";
 
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
+import I18nProvider from '@/components/I18nProvider';
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -18,13 +21,16 @@ import {
   Settings,
 } from "lucide-react";
 
+export const Sidebar = (): JSX.Element => {
+  const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+  const { t } = useTranslation();
+
 const navigation = [
-  { name: "About", href: "/", icon: User },
-  { name: "Publications", href: "/publications", icon: BookOpen },
-  { name: "Portfolio", href: "/portfolio", icon: FolderOpen },
-  { name: "Blog", href: "/blog", icon: PenTool },
-  { name: "CV", href: "/cv", icon: FileText },
-  { name: "Admin", href: "/admin", icon: Settings },
+  { name: 'nav.about', href: "/", icon: User },
+  { name: 'nav.portfolio', href: "/publications", icon: BookOpen },
+  { name: 'nav.blog', href: "/portfolio", icon: FolderOpen },
+  { name: 'nav.cv', href: "/blog", icon: PenTool },
 ];
 
 const socialLinks = [
@@ -33,9 +39,6 @@ const socialLinks = [
   { name: "Email", href: "mailto:", icon: Mail },
 ];
 
-export const Sidebar = (): JSX.Element => {
-  const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
@@ -69,9 +72,10 @@ export const Sidebar = (): JSX.Element => {
                 <User className="w-16 h-16 text-gray-400" />
               </div>
             </div>
-            <h1 className="text-xl font-semibold text-gray-900">Your Name</h1>
-            <p className="text-sm text-gray-600 mt-1">Academic Title</p>
-            <p className="text-sm text-gray-600">Institution</p>
+            <h1 className="text-xl font-semibold text-gray-900">
+              {t('myself.name')}
+            </h1>
+            <p className="text-sm text-gray-600 mt-1">{t('myself.job_title')}</p>
           </div>
 
           {/* Navigation */}
@@ -91,7 +95,7 @@ export const Sidebar = (): JSX.Element => {
                   }`}
                 >
                   <Icon className="w-5 h-5 mr-3" />
-                  {item.name}
+                  {t(item.name)}
                 </Link>
               );
             })}

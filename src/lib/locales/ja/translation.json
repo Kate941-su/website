@@ -1,11 +1,13 @@
 {
+  "myself": {
+    "name": "北谷 海斗",
+    "job_title": "ソフトウェアエンジニア"
+  },
   "nav": {
-    "home": "ホーム",
-    "blog": "ブログ",
+    "about": "私について",
     "portfolio": "ポートフォリオ",
-    "publications": "論文",
-    "cv": "履歴書",
-    "admin": "管理"
+    "blog": "ブログ",
+    "cv": "履歴書"
   },
   "home": {
     "title": "私の学術ポートフォリオへようこそ",
