@@ -1,4 +1,4 @@
-type Education = {
+export type Education = {
   title: string;
   started_at: Date;
   ended_at: Date;
@@ -6,7 +6,7 @@ type Education = {
   description: string;
 };
 
-type JobHistory = {
+export type JobHistory = {
   title: string;
   started_at: Date;
   ended_at: Date;

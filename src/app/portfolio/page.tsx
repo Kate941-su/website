@@ -81,7 +81,7 @@ export default function Portfolio(): JSX.Element {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
+        {/* <div className="mt-16 text-center">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">
             Interested in collaborating?
           </h2>
@@ -95,7 +95,7 @@ export default function Portfolio(): JSX.Element {
           >
             Get in touch
           </a>
-        </div>
+        </div> */}
       </div>
     </div>
   );
