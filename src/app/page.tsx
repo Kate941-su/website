@@ -1,37 +1,44 @@
-import { Card, CardContent } from "@/components/ui/card";
+'use client';
 
-export default function Home(): JSX.Element {
+import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
+import I18nProvider from '@/components/I18nProvider';
+
+function HomePage(): JSX.Element {
+  const { t } = useTranslation();
   return (
     <div className="container mx-auto px-6 py-8">
       <div className="max-w-4xl">
+        {/* Language Switcher */}
+        <div className="flex justify-end mb-6">
+          <LanguageSwitcher />
+        </div>
+
         {/* Hero Section */}
         <section className="mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Welcome to My Academic Portfolio
+            {t('home.title')}
           </h1>
           <p className="text-lg text-gray-600 leading-relaxed mb-6">
-            I am a researcher and educator passionate about [your field]. This
-            portfolio showcases my publications, projects, and thoughts on
-            [relevant topics]. Feel free to explore my work and get in touch if
-            you'd like to collaborate.
+            {t('home.subtitle', {
+              field: 'artificial intelligence and machine learning',
+              topics: 'cutting-edge research and technological innovation'
+            })}
           </p>
         </section>
 
         {/* About Section */}
         <section className="mb-12">
           <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-            About Me
+            {t('home.aboutTitle')}
           </h2>
           <div className="prose prose-lg text-gray-700">
             <p className="mb-4">
-              Brief introduction about your background, research interests, and
-              current position. This should give visitors a quick overview of
-              who you are and what you do.
+              {t('home.aboutText1')}
             </p>
             <p className="mb-4">
-              Information about your educational background, key achievements,
-              and current research focus. You can highlight your most
-              significant contributions to your field here.
+              {t('home.aboutText2')}
             </p>
           </div>
         </section>
@@ -39,39 +46,36 @@ export default function Home(): JSX.Element {
         {/* Research Interests */}
         <section className="mb-12">
           <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-            Research Interests
+            {t('home.researchTitle')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Card>
               <CardContent className="p-6">
                 <h3 className="font-semibold text-gray-900 mb-2">
-                  Research Area 1
+                  {t('home.researchArea1.title')}
                 </h3>
                 <p className="text-gray-600 text-sm">
-                  Brief description of your first research interest or area of
-                  expertise.
+                  {t('home.researchArea1.description')}
                 </p>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="p-6">
                 <h3 className="font-semibold text-gray-900 mb-2">
-                  Research Area 2
+                  {t('home.researchArea2.title')}
                 </h3>
                 <p className="text-gray-600 text-sm">
-                  Brief description of your second research interest or area of
-                  expertise.
+                  {t('home.researchArea2.description')}
                 </p>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="p-6">
                 <h3 className="font-semibold text-gray-900 mb-2">
-                  Research Area 3
+                  {t('home.researchArea3.title')}
                 </h3>
                 <p className="text-gray-600 text-sm">
-                  Brief description of your third research interest or area of
-                  expertise.
+                  {t('home.researchArea3.description')}
                 </p>
               </CardContent>
             </Card>
@@ -81,30 +85,38 @@ export default function Home(): JSX.Element {
         {/* Recent Updates */}
         <section>
           <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-            Recent Updates
+            {t('home.updatesTitle')}
           </h2>
           <div className="space-y-4">
             <div className="border-l-4 border-blue-500 pl-4">
               <p className="text-sm text-gray-500 mb-1">December 2024</p>
               <p className="text-gray-900">
-                New publication accepted in Journal Name
+                {t('home.updates.december')}
               </p>
             </div>
             <div className="border-l-4 border-green-500 pl-4">
               <p className="text-sm text-gray-500 mb-1">November 2024</p>
               <p className="text-gray-900">
-                Presented research at Conference Name
+                {t('home.updates.november')}
               </p>
             </div>
             <div className="border-l-4 border-purple-500 pl-4">
               <p className="text-sm text-gray-500 mb-1">October 2024</p>
               <p className="text-gray-900">
-                Started new research project on Topic
+                {t('home.updates.october')}
               </p>
             </div>
           </div>
         </section>
       </div>
     </div>
+  );
+}
+
+export default function Home(): JSX.Element {
+  return (
+    <I18nProvider>
+      <HomePage />
+    </I18nProvider>
   );
 }

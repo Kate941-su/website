@@ -1,0 +1,42 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "blog": "Blog",
+    "portfolio": "Portafolio",
+    "publications": "Publicaciones",
+    "cv": "CV",
+    "admin": "Admin"
+  },
+  "home": {
+    "title": "Bienvenido a Mi Portafolio Académico",
+    "subtitle": "Soy un investigador y educador apasionado por {{field}}. Este portafolio muestra mis publicaciones, proyectos y pensamientos sobre {{topics}}. Siéntete libre de explorar mi trabajo y ponte en contacto si te gustaría colaborar.",
+    "aboutTitle": "Acerca de Mí",
+    "aboutText1": "Breve introducción sobre tu formación, intereses de investigación y posición actual. Esto debería dar a los visitantes una visión rápida de quién eres y qué haces.",
+    "aboutText2": "Información sobre tu formación educativa, logros clave y enfoque de investigación actual. Puedes destacar tus contribuciones más significativas a tu campo aquí.",
+    "researchTitle": "Intereses de Investigación",
+    "researchArea1": {
+      "title": "Área de Investigación 1",
+      "description": "Breve descripción de tu primer interés de investigación o área de especialización."
+    },
+    "researchArea2": {
+      "title": "Área de Investigación 2",
+      "description": "Breve descripción de tu segundo interés de investigación o área de especialización."
+    },
+    "researchArea3": {
+      "title": "Área de Investigación 3",
+      "description": "Breve descripción de tu tercer interés de investigación o área de especialización."
+    },
+    "updatesTitle": "Actualizaciones Recientes",
+    "updates": {
+      "december": "Nueva publicación aceptada en Nombre de la Revista",
+      "november": "Presenté investigación en Nombre de la Conferencia",
+      "october": "Comenzé nuevo proyecto de investigación sobre Tema"
+    }
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Ocurrió un error",
+    "language": "Idioma",
+    "switchLanguage": "Cambiar Idioma"
+  }
+}
