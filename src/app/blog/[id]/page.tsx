@@ -116,9 +116,11 @@ export default function BlogPostPage(): JSX.Element {
           {/* Article Content */}
           <Card className="mb-8">
             <CardContent className="p-8">
-          <Markdown remarkPlugins={[remarkGfm]}>
-              {post.content.replace(/\n/g, '<br />')}
-          </Markdown>
+              <div className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-blue-600 prose-strong:text-gray-900 prose-ul:text-gray-700 prose-ol:text-gray-700 prose-li:text-gray-700 prose-code:text-pink-600 prose-pre:bg-gray-100">
+                <Markdown remarkPlugins={[remarkGfm]}>
+                  {post.content}
+                </Markdown>
+              </div>
             </CardContent>
           </Card>
 
