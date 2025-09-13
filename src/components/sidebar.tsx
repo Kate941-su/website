@@ -19,6 +19,7 @@ import {
   Menu,
   X,
   Settings,
+  Twitter,
 } from "lucide-react";
 
 export const Sidebar = (): JSX.Element => {
@@ -37,7 +38,7 @@ const socialLinks = [
   { name: "GitHub", href: "https://github.com/Kate941-su", icon: Github },
   { name: "LinkedIn", href: "https://www.linkedin.com/in/kaito-kitaya-379a70274/", icon: Linkedin },
   { name: "Email", href: "mailto:kaito.kitaya.deutschland@gmail.com", icon: Mail },
-  { name: "X", href: "https://x.com/kait60741", icon: Mail },
+  { name: "X", href: "https://x.com/kait60741", icon: Twitter },
 ];
 
   return (

@@ -10,29 +10,29 @@
     "cv": "履歴書"
   },
   "home": {
-    "title": "私の学術ポートフォリオへようこそ",
-    "subtitle": "私は{{field}}に情熱を注ぐ研究者・教育者です。このポートフォリオでは、私の論文、プロジェクト、{{topics}}に関する考えを紹介しています。私の研究をご覧いただき、ご協力いただける場合はお気軽にお声かけください。",
+    "title": "私のウェブサイトへようこそ！👋",
+    "subtitle": "日本のソフトウェアエンジニアです 🇯🇵。現在はドイツに住んでいます 🇩🇪。2021年からソフトウェアエンジニアとして働いており、主にモバイルアプリケーションエンジニアとして活動しています。",
     "aboutTitle": "私について",
-    "aboutText1": "あなたの経歴、研究興味、現在のポジションに関する簡潔な紹介。訪問者にあなたが誰で何をしているかの概要を素早く提供する必要があります。",
-    "aboutText2": "教育的背景、主要な成果、現在の研究フォーカスに関する情報。あなたの分野への最も重要な貢献をここでハイライトできます。",
-    "researchTitle": "研究興味",
+    "aboutText1": " - OSSライブラリを開発しています 🙌",
+    "aboutText2": " - 深く考えることが好きです 🧠",
+    "researchTitle": "興味・関心",
     "researchArea1": {
-      "title": "研究分野1",
-      "description": "あなたの最初の研究興味または専門分野の簡潔な説明。"
+      "title": "新しい技術 💻",
+      "description": "新しい技術を追求し、その技術がどの程度効率を改善するかを分析します。"
     },
     "researchArea2": {
-      "title": "研究分野2",
-      "description": "あなたの2番目の研究興味または専門分野の簡潔な説明。"
+      "title": "創造性 💥",
+      "description": "創造性を育み、イノベーションを起こしたいと考えています！"
     },
     "researchArea3": {
-      "title": "研究分野3",
-      "description": "あなたの3番目の研究興味または専門分野の簡潔な説明。"
+      "title": "収益化",
+      "description": "お金を稼ぐことも目標です💰"
     },
     "updatesTitle": "最近の更新",
     "updates": {
-      "december": "ジャーナル名で新しい論文が受理されました",
-      "november": "カンファレンス名で研究を発表しました",
-      "october": "トピックに関する新しい研究プロジェクトを開始しました"
+      "december": "New publication accepted in Journal Name",
+      "november": "Presented research at Conference Name",
+      "october": "Started new research project on Topic"
     }
   },
   "sidebar": {

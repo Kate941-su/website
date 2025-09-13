@@ -10,23 +10,23 @@
     "cv": "CV"
   },
   "home": {
-    "title": "Welcome to My Academic Portfolio",
-    "subtitle": "I am a researcher and educator passionate about {{field}}. This portfolio showcases my publications, projects, and thoughts on {{topics}}. Feel free to explore my work and get in touch if you'd like to collaborate.",
+    "title": "Welcome to My Website! 👋",
+    "subtitle": "I am a Software engineer from Japan 🇯🇵. Now I live in Germany 🇩🇪. I've work as a software engineer since 2021. Most of time I am a mobile application engineer.",
     "aboutTitle": "About Me",
-    "aboutText1": "Brief introduction about your background, research interests, and current position. This should give visitors a quick overview of who you are and what you do.",
-    "aboutText2": "Information about your educational background, key achievements, and current research focus. You can highlight your most significant contributions to your field here.",
-    "researchTitle": "Research Interests",
+    "aboutText1": " - I create OSS libraries 🙌",
+    "aboutText2": " - I love thinking deeply 🧠",
+    "researchTitle": "My interests",
     "researchArea1": {
-      "title": "Research Area 1",
-      "description": "Brief description of your first research interest or area of expertise."
+      "title": "New technology 💻",
+      "description": "I pursue new technology and analize how efficient the tech improves."
     },
     "researchArea2": {
-      "title": "Research Area 2",
-      "description": "Brief description of your second research interest or area of expertise."
+      "title": "Creativity 💥",
+      "description": "I have to grow up my creativity and make an innovation!"
     },
     "researchArea3": {
-      "title": "Research Area 3",
-      "description": "Brief description of your third research interest or area of expertise."
+      "title": "Monetize",
+      "description": "My goal is also to make money💰"
     },
     "updatesTitle": "Recent Updates",
     "updates": {
