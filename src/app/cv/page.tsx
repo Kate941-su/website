@@ -11,7 +11,7 @@ export default function CV(): JSX.Element {
         <div className="flex items-center justify-between mb-8">
           <h1 className="text-3xl font-bold text-gray-900">Curriculum Vitae</h1>
           <a
-            href="../../../static/document/cv.pdf"
+            href={`${process.env.NODE_ENV === 'production' ? '/website' : ''}/documents/cv.pdf`}
             download
             className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >
