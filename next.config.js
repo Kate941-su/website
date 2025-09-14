@@ -2,15 +2,13 @@
 const nextConfig = {
   images: {
     domains: ["localhost"],
-    ...(process.env.NODE_ENV === 'production' && { unoptimized: true }),
+    unoptimized: true,
   },
-  ...(process.env.NODE_ENV === 'production' && {
-    output: "export",
-    distDir: "dist",
-    trailingSlash: true,
-    basePath: process.env.GITHUB_ACTIONS ? '/blog' : '',
-    assetPrefix: process.env.GITHUB_ACTIONS ? '/blog/' : '',
-  }),
+  output: "export",
+  distDir: "dist",
+  trailingSlash: true,
+  basePath: process.env.NODE_ENV === 'production' ? '/website' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/website/' : '',
 };
 
 module.exports = nextConfig;
