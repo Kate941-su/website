@@ -12,7 +12,6 @@ export default function CV(): JSX.Element {
           <h1 className="text-3xl font-bold text-gray-900">Curriculum Vitae</h1>
           <a
             href="https://drive.google.com/file/d/1GOdYy28vyQdevw8hFCR1yUUvRaXFDx44/view?usp=drive_link"
-            download
             className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >
             <Download className="w-4 h-4 mr-2" />
