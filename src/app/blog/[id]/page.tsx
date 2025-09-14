@@ -1,141 +1,29 @@
-'use client'
-
-import { useParams } from 'next/navigation'
 import { Card, CardContent } from '@/components/ui/card'
 import { ArrowLeft, Calendar, Clock, User } from 'lucide-react'
 import Link from 'next/link'
 import Markdown from 'react-markdown'
 import remarkGfm from "remark-gfm"
-import { useEffect, useState } from 'react'
+import { getBlogPost, getBlogPosts } from '@/lib/blog-data'
+import { notFound } from 'next/navigation'
 
-interface BlogPost {
-  id: string;
-  title: string;
-  content: string;
-  excerpt: string;
-  slug: string;
-  tags: string[];
-  author: string;
-  createdAt: string;
-  readTime: string;
+export async function generateStaticParams() {
+  const posts = getBlogPosts()
+  return posts.map((post) => ({
+    id: post.slug,
+  }))
 }
 
-
-export default function BlogPostPage(): JSX.Element {
-  const params = useParams()
-  const [post, setPost] = useState<BlogPost | null>(null)
-  const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
-
-  useEffect(() => {
-    if (params.id) {
-      fetch(`/api/blog/${params.id}`)
-        .then(res => {
-          if (!res.ok) {
-            throw new Error('Post not found')
-          }
-          return res.json()
-        })
-        .then(data => {
-          setPost(data.post)
-          setIsLoading(false)
-        })
-        .catch(err => {
-          setError(err.message)
-          setIsLoading(false)
-        })
-    }
-  }, [params.id])
-
-  // if (isLoading) {
-  //   return (
-  //     <div className="container mx-auto px-6 py-8">
-  //       <div className="max-w-4xl">
-  //         <div className="animate-pulse">
-  //           <div className="h-8 bg-gray-200 rounded mb-4"></div>
-  //           <div className="h-4 bg-gray-200 rounded mb-2"></div>
-  //           <div className="h-4 bg-gray-200 rounded mb-8"></div>
-  //           <div className="space-y-4">
-  //             <div className="h-4 bg-gray-200 rounded"></div>
-  //             <div className="h-4 bg-gray-200 rounded"></div>
-  //             <div className="h-4 bg-gray-200 rounded w-3/4"></div>
-  //           </div>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   )
-  // }
-
-  // if (error || !data?.post) {
-  //   return (
-  //     <div className="container mx-auto px-6 py-8">
-  //       <div className="max-w-4xl">
-  //         <Card className="border-red-200">
-  //           <CardContent className="p-8 text-center">
-  //             <h1 className="text-xl font-semibold text-red-800 mb-2">
-  //               Post Not Found
-  //             </h1>
-  //             <p className="text-red-600 mb-4">
-  //               The blog post you're looking for doesn't exist or has been removed.
-  //             </p>
-  //             <Link
-  //               href="/blog"
-  //               className="inline-flex items-center text-blue-600 hover:text-blue-800"
-  //             >
-  //               <ArrowLeft className="w-4 h-4 mr-2" />
-  //               Back to Blog
-  //             </Link>
-  //           </CardContent>
-  //         </Card>
-  //       </div>
-  //     </div>
-  //   )
-  // }
-
-  if (isLoading) {
-    return (
-      <div className="container mx-auto px-6 py-8">
-        <div className="max-w-4xl">
-          <div className="animate-pulse">
-            <div className="h-8 bg-gray-200 rounded mb-4"></div>
-            <div className="h-4 bg-gray-200 rounded mb-2"></div>
-            <div className="h-4 bg-gray-200 rounded mb-2"></div>
-            <div className="h-4 bg-gray-200 rounded mb-6 w-3/4"></div>
-            <div className="space-y-4">
-              <div className="h-4 bg-gray-200 rounded"></div>
-              <div className="h-4 bg-gray-200 rounded"></div>
-              <div className="h-4 bg-gray-200 rounded w-5/6"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
+interface BlogPostPageProps {
+  params: {
+    id: string
   }
+}
 
-  if (error || !post) {
-    return (
-      <div className="container mx-auto px-6 py-8">
-        <div className="max-w-4xl">
-          <Card className="border-red-200">
-            <CardContent className="p-8 text-center">
-              <h1 className="text-xl font-semibold text-red-800 mb-2">
-                {error ? 'Error Loading Post' : 'Post Not Found'}
-              </h1>
-              <p className="text-red-600 mb-4">
-                {error || "The blog post you're looking for doesn't exist or has been removed."}
-              </p>
-              <Link
-                href="/blog"
-                className="inline-flex items-center text-blue-600 hover:text-blue-800"
-              >
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to Blog
-              </Link>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-    )
+export default function BlogPostPage({ params }: BlogPostPageProps): JSX.Element {
+  const post = getBlogPost(params.id)
+
+  if (!post) {
+    notFound()
   }
 
 
