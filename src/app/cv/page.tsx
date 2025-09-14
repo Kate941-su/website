@@ -1,5 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Download } from "lucide-react";
+import { educationList } from "./education_list";
+import { jobHistoryList } from "./job_history_list";
+import { frameworkList, programmingLanguageList } from "./skill_list";
 
 export default function CV(): JSX.Element {
   return (
@@ -8,7 +11,7 @@ export default function CV(): JSX.Element {
         <div className="flex items-center justify-between mb-8">
           <h1 className="text-3xl font-bold text-gray-900">Curriculum Vitae</h1>
           <a
-            href="/cv.pdf"
+            href="../../../static/document/cv.pdf"
             download
             className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >
@@ -23,93 +26,51 @@ export default function CV(): JSX.Element {
             Education
           </h2>
           <div className="space-y-4">
+            {educationList.map((education) => (
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Ph.D. in Your Field</CardTitle>
+                <CardTitle className="text-lg">{education.title}</CardTitle>
                 <div className="text-gray-600 text-sm">
-                  <p>University Name | 2020 - 2024</p>
+                  <p>{education.university_name} | {education.started_at.getFullYear()} - {education.ended_at.getFullYear()}</p>
                   <p className="mt-1">
-                    <strong>Dissertation:</strong> "Title of Your Dissertation"
-                  </p>
-                  <p>
-                    <strong>Advisor:</strong> Prof. Advisor Name
+                    <strong>Description: </strong> {education.description}
                   </p>
                 </div>
               </CardHeader>
             </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">M.S. in Your Field</CardTitle>
-                <div className="text-gray-600 text-sm">
-                  <p>University Name | 2018 - 2020</p>
-                  <p className="mt-1">
-                    <strong>Thesis:</strong> "Title of Your Master's Thesis"
-                  </p>
-                </div>
-              </CardHeader>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">B.S. in Your Field</CardTitle>
-                <div className="text-gray-600 text-sm">
-                  <p>University Name | 2014 - 2018</p>
-                  <p className="mt-1">
-                    <strong>Magna Cum Laude</strong>
-                  </p>
-                </div>
-              </CardHeader>
-            </Card>
+            ))
+            }
           </div>
         </section>
 
         {/* Experience */}
         <section className="mb-12">
           <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-            Professional Experience
+            Job Experience
           </h2>
           <div className="space-y-4">
+            {jobHistoryList.map((job) => (
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg">
-                  Postdoctoral Researcher
+                  {job.title}
                 </CardTitle>
                 <div className="text-gray-600 text-sm">
-                  <p>Institution Name | 2024 - Present</p>
+                  <p>{job.company_name} | {job.started_at.getFullYear()} - {job.ended_at?.getFullYear() ?? "Present"}</p>
                 </div>
               </CardHeader>
               <CardContent>
-                <ul className="list-disc list-inside text-gray-700 text-sm space-y-1">
-                  <li>Leading research on topic area</li>
-                  <li>Collaborating with international research teams</li>
-                  <li>Publishing in top-tier journals</li>
-                </ul>
+                <p>
+                  {job.description}
+                </p>
               </CardContent>
             </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">
-                  Graduate Research Assistant
-                </CardTitle>
-                <div className="text-gray-600 text-sm">
-                  <p>University Name | 2020 - 2024</p>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <ul className="list-disc list-inside text-gray-700 text-sm space-y-1">
-                  <li>Conducted independent research</li>
-                  <li>Mentored undergraduate students</li>
-                  <li>Presented at international conferences</li>
-                </ul>
-              </CardContent>
-            </Card>
+            ))}
           </div>
         </section>
 
         {/* Awards & Honors */}
-        <section className="mb-12">
+        {/* <section className="mb-12">
           <h2 className="text-2xl font-semibold text-gray-900 mb-6">
             Awards & Honors
           </h2>
@@ -144,7 +105,7 @@ export default function CV(): JSX.Element {
               <span className="text-gray-500 text-sm">2022</span>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Skills */}
         <section className="mb-12">
@@ -158,7 +119,7 @@ export default function CV(): JSX.Element {
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  {["Python", "R", "MATLAB", "JavaScript", "SQL"].map(
+                  {programmingLanguageList.map(
                     (skill) => (
                       <span
                         key={skill}
@@ -178,7 +139,7 @@ export default function CV(): JSX.Element {
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  {["TensorFlow", "PyTorch", "Jupyter", "Git", "Docker"].map(
+                  {frameworkList.map(
                     (tool) => (
                       <span
                         key={tool}
@@ -195,7 +156,7 @@ export default function CV(): JSX.Element {
         </section>
 
         {/* Publications Summary */}
-        <section>
+        {/* <section>
           <h2 className="text-2xl font-semibold text-gray-900 mb-6">
             Publications Summary
           </h2>
@@ -217,7 +178,7 @@ export default function CV(): JSX.Element {
               <div className="text-sm text-gray-600">Citations</div>
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
     </div>
   );

@@ -1,0 +1,105 @@
+{
+  "myself": {
+    "name": "Kaito Kitaya",
+    "job_title": "Software Engineer"
+  },
+  "nav": {
+    "about": "About",
+    "portfolio": "Portfolio",
+    "blog": "Blog",
+    "cv": "CV"
+  },
+  "home": {
+    "title": "Welcome to My Website! 👋",
+    "subtitle": "I am a Software engineer from Japan 🇯🇵. Now I live in Germany 🇩🇪. I've work as a software engineer since 2021. Most of time I am a mobile application engineer.",
+    "aboutTitle": "About Me",
+    "aboutText1": " - I create OSS libraries 🙌",
+    "aboutText2": " - I love thinking deeply 🧠",
+    "researchTitle": "My interests",
+    "researchArea1": {
+      "title": "New technology 💻",
+      "description": "I pursue new technology and analize how efficient the tech improves."
+    },
+    "researchArea2": {
+      "title": "Creativity 💥",
+      "description": "I have to grow up my creativity and make an innovation!"
+    },
+    "researchArea3": {
+      "title": "Monetize",
+      "description": "My goal is also to make money💰"
+    },
+    "updatesTitle": "Recent Updates",
+    "updates": {
+      "december": "New publication accepted in Journal Name",
+      "november": "Presented research at Conference Name",
+      "october": "Started new research project on Topic"
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "description": "The following projects are my indivisual developement results."
+  },
+  "sidebar": {
+    "profile": {
+      "title": "Profile",
+      "name": "Dr. John Smith",
+      "position": "Senior Researcher",
+      "institution": "University Name",
+      "department": "Department of Computer Science",
+      "email": "Email",
+      "phone": "Phone",
+      "office": "Office",
+      "officeHours": "Office Hours"
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "researchGate": "ResearchGate",
+      "googleScholar": "Google Scholar",
+      "orcid": "ORCID",
+      "linkedIn": "LinkedIn",
+      "twitter": "Twitter",
+      "github": "GitHub"
+    },
+    "currentProjects": {
+      "title": "Current Projects",
+      "project1": "AI in Healthcare",
+      "project2": "Machine Learning Optimization",
+      "project3": "Data Science Applications",
+      "viewAll": "View All Projects"
+    },
+    "recentPublications": {
+      "title": "Recent Publications",
+      "publication1": "Deep Learning for Medical Imaging (2024)",
+      "publication2": "Advances in Neural Networks (2023)",
+      "publication3": "AI Ethics and Society (2023)",
+      "viewAll": "View All Publications"
+    },
+    "awards": {
+      "title": "Awards & Honors",
+      "award1": "Best Paper Award 2024",
+      "award2": "Excellence in Research 2023",
+      "award3": "Young Researcher Grant 2022",
+      "viewAll": "View All Awards"
+    },
+    "statistics": {
+      "title": "Research Metrics",
+      "publications": "Publications",
+      "citations": "Citations",
+      "hIndex": "H-Index",
+      "projects": "Active Projects"
+    },
+    "news": {
+      "title": "Latest News",
+      "news1": "Accepted to ICML 2024",
+      "news2": "New grant funding received",
+      "news3": "Speaking at AI Conference",
+      "viewAll": "View All News"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "language": "Language",
+    "switchLanguage": "Switch Language"
+  }
+}

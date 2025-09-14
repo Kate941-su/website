@@ -64,7 +64,8 @@ export default function AdminPage(): JSX.Element {
 
   return (
     <div className="container mx-auto px-6 py-8">
-      <div className="max-w-4xl">
+      next feature
+      {/* <div className="max-w-4xl">
         <h1 className="text-3xl font-bold text-gray-900 mb-8">Blog Admin</h1>
 
         <Card>
@@ -212,7 +213,7 @@ export default function AdminPage(): JSX.Element {
             <li>Add preview functionality</li>
           </ul>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

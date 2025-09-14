@@ -1,7 +1,7 @@
 "use client";
 
+import { useTranslation } from 'react-i18next';
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import {
@@ -16,26 +16,27 @@ import {
   Menu,
   X,
   Settings,
+  Twitter,
 } from "lucide-react";
-
-const navigation = [
-  { name: "About", href: "/", icon: User },
-  { name: "Publications", href: "/publications", icon: BookOpen },
-  { name: "Portfolio", href: "/portfolio", icon: FolderOpen },
-  { name: "Blog", href: "/blog", icon: PenTool },
-  { name: "CV", href: "/cv", icon: FileText },
-  { name: "Admin", href: "/admin", icon: Settings },
-];
-
-const socialLinks = [
-  { name: "GitHub", href: "#", icon: Github },
-  { name: "LinkedIn", href: "#", icon: Linkedin },
-  { name: "Email", href: "mailto:", icon: Mail },
-];
 
 export const Sidebar = (): JSX.Element => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useTranslation();
+
+const navigation = [
+  { name: 'nav.about', href: "/", icon: User },
+  { name: 'nav.portfolio', href: "/portfolio", icon: BookOpen },
+  { name: 'nav.blog', href: "/blog", icon: FolderOpen },
+  { name: 'nav.cv', href: "/cv", icon: PenTool },
+];
+
+const socialLinks = [
+  { name: "GitHub", href: "https://github.com/Kate941-su", icon: Github },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/kaito-kitaya-379a70274/", icon: Linkedin },
+  { name: "Email", href: "mailto:kaito.kitaya.deutschland@gmail.com", icon: Mail },
+  { name: "X", href: "https://x.com/kait60741", icon: Twitter },
+];
 
   return (
     <>
@@ -69,9 +70,10 @@ export const Sidebar = (): JSX.Element => {
                 <User className="w-16 h-16 text-gray-400" />
               </div>
             </div>
-            <h1 className="text-xl font-semibold text-gray-900">Your Name</h1>
-            <p className="text-sm text-gray-600 mt-1">Academic Title</p>
-            <p className="text-sm text-gray-600">Institution</p>
+            <h1 className="text-xl font-semibold text-gray-900">
+              {t('myself.name')}
+            </h1>
+            <p className="text-sm text-gray-600 mt-1">{t('myself.job_title')}</p>
           </div>
 
           {/* Navigation */}
@@ -91,7 +93,7 @@ export const Sidebar = (): JSX.Element => {
                   }`}
                 >
                   <Icon className="w-5 h-5 mr-3" />
-                  {item.name}
+                  {t(item.name)}
                 </Link>
               );
             })}

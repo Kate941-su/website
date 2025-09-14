@@ -1,0 +1,105 @@
+{
+  "myself": {
+    "name": "北谷 海斗",
+    "job_title": "ソフトウェアエンジニア"
+  },
+  "nav": {
+    "about": "私について",
+    "portfolio": "ポートフォリオ",
+    "blog": "ブログ",
+    "cv": "履歴書"
+  },
+  "home": {
+    "title": "私のウェブサイトへようこそ！👋",
+    "subtitle": "日本のソフトウェアエンジニアです 🇯🇵。現在はドイツに住んでいます 🇩🇪。2021年からソフトウェアエンジニアとして働いており、主にモバイルアプリケーションエンジニアとして活動しています。",
+    "aboutTitle": "私について",
+    "aboutText1": " - OSSライブラリを開発しています 🙌",
+    "aboutText2": " - 深く考えることが好きです 🧠",
+    "researchTitle": "興味・関心",
+    "researchArea1": {
+      "title": "新しい技術 💻",
+      "description": "新しい技術を追求し、その技術がどの程度効率を改善するかを分析します。"
+    },
+    "researchArea2": {
+      "title": "創造性 💥",
+      "description": "創造性を育み、イノベーションを起こしたいと考えています！"
+    },
+    "researchArea3": {
+      "title": "収益化",
+      "description": "お金を稼ぐことも目標です💰"
+    },
+    "updatesTitle": "最近の更新",
+    "updates": {
+      "december": "New publication accepted in Journal Name",
+      "november": "Presented research at Conference Name",
+      "october": "Started new research project on Topic"
+    }
+  },
+  "portfolio": {
+    "title": "ポートフォリオ",
+    "description": "以下のプロジェクトは私の個人的な開発成果です。"
+  },
+  "sidebar": {
+    "profile": {
+      "title": "プロフィール",
+      "name": "田中 太郎 博士",
+      "position": "主任研究員",
+      "institution": "大学名",
+      "department": "コンピュータサイエンス学部",
+      "email": "メール",
+      "phone": "電話番号",
+      "office": "研究室",
+      "officeHours": "オフィスアワー"
+    },
+    "quickLinks": {
+      "title": "クイックリンク",
+      "researchGate": "ResearchGate",
+      "googleScholar": "Google Scholar",
+      "orcid": "ORCID",
+      "linkedIn": "LinkedIn",
+      "twitter": "Twitter",
+      "github": "GitHub"
+    },
+    "currentProjects": {
+      "title": "現在のプロジェクト",
+      "project1": "ヘルスケアにおけるAI",
+      "project2": "機械学習の最適化",
+      "project3": "データサイエンス応用",
+      "viewAll": "全プロジェクトを見る"
+    },
+    "recentPublications": {
+      "title": "最近の論文",
+      "publication1": "医療画像のディープラーニング (2024)",
+      "publication2": "ニューラルネットワークの進歩 (2023)",
+      "publication3": "AI倫理と社会 (2023)",
+      "viewAll": "全論文を見る"
+    },
+    "awards": {
+      "title": "受賞・栄誉",
+      "award1": "最優秀論文賞 2024",
+      "award2": "研究優秀賞 2023",
+      "award3": "若手研究者助成金 2022",
+      "viewAll": "全受賞歴を見る"
+    },
+    "statistics": {
+      "title": "研究指標",
+      "publications": "論文数",
+      "citations": "被引用数",
+      "hIndex": "H指数",
+      "projects": "活動中プロジェクト"
+    },
+    "news": {
+      "title": "最新ニュース",
+      "news1": "ICML 2024に採択",
+      "news2": "新規助成金を獲得",
+      "news3": "AIカンファレンスで講演",
+      "viewAll": "全ニュースを見る"
+    }
+  },
+  "common": {
+    "loading": "読み込み中...",
+    "error": "エラーが発生しました",
+    "language": "言語",
+    "switchLanguage": "言語を切り替える"
+  }
+}
