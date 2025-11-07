@@ -7,8 +7,10 @@ const nextConfig = {
   output: "export",
   distDir: "dist",
   trailingSlash: true,
-  basePath: process.env.NODE_ENV === 'production' ? '/website' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/website/' : '',
+  basePath: '/website',
+  assetPrefix:'/website/',
+  // basePath: '',
+  // assetPrefix:'',
 };
 
 module.exports = nextConfig;
