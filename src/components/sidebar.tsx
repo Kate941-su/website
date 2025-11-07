@@ -1,6 +1,5 @@
 "use client";
 
-import { useTranslation } from 'react-i18next';
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -9,26 +8,20 @@ import {
   BookOpen,
   FolderOpen,
   PenTool,
-  FileText,
   Github,
   Linkedin,
   Mail,
   Menu,
   X,
-  Settings,
   Twitter,
 } from "lucide-react";
-
-export const Sidebar = (): JSX.Element => {
-  const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
-  const { t } = useTranslation();
+import { CircleAvatar } from "@/components/circle-avatar";
 
 const navigation = [
-  { name: 'nav.about', href: "/", icon: User },
-  { name: 'nav.portfolio', href: "/portfolio", icon: BookOpen },
-  { name: 'nav.blog', href: "/blog", icon: FolderOpen },
-  { name: 'nav.cv', href: "/cv", icon: PenTool },
+  { label: "About", href: "/", icon: User },
+  { label: "Portfolio", href: "/portfolio", icon: BookOpen },
+  { label: "Blog", href: "/blog", icon: FolderOpen },
+  { label: "CV", href: "/cv", icon: PenTool },
 ];
 
 const socialLinks = [
@@ -37,6 +30,10 @@ const socialLinks = [
   { name: "Email", href: "mailto:kaito.kitaya.deutschland@gmail.com", icon: Mail },
   { name: "X", href: "https://x.com/kait60741", icon: Twitter },
 ];
+
+export const Sidebar = (): JSX.Element => {
+  const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
@@ -65,15 +62,16 @@ const socialLinks = [
         <div className="flex flex-col h-full">
           {/* Profile Section */}
           <div className="p-6 text-center border-b border-gray-200">
-            <div className="relative w-32 h-32 mx-auto mb-4">
-              <div className="w-32 h-32 bg-gray-200 rounded-full flex items-center justify-center">
-                <User className="w-16 h-16 text-gray-400" />
-              </div>
+            <div className="mx-auto mb-4 flex justify-center">
+              <CircleAvatar src="/img/profile.jpg" alt="Kaito Kitaya" size={128} />
             </div>
             <h1 className="text-xl font-semibold text-gray-900">
-              {t('myself.name')}
+              Kaito Kitaya
             </h1>
-            <p className="text-sm text-gray-600 mt-1">{t('myself.job_title')}</p>
+            <h1 className="text-xl font-semibold text-gray-900">
+              北谷 海斗
+            </h1>
+            <p className="text-sm text-gray-600 mt-1">Software Engineer</p>
           </div>
 
           {/* Navigation */}
@@ -84,7 +82,7 @@ const socialLinks = [
 
               return (
                 <Link
-                  key={item.name}
+                  key={item.label}
                   href={item.href}
                   className={`flex items-center px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                     isActive
@@ -93,7 +91,7 @@ const socialLinks = [
                   }`}
                 >
                   <Icon className="w-5 h-5 mr-3" />
-                  {t(item.name)}
+                  {item.label}
                 </Link>
               );
             })}

@@ -7,8 +7,8 @@ import { QueryProviders } from "@/components/query-providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "V/N Portfolio",
-  description: "My thoughts and point of views",
+  title: "Kaito Kitaya Website",
+  description: "OSS saves our culture and our future",
 };
 
 export default function RootLayout({

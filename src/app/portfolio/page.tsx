@@ -4,19 +4,17 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink, Github, FolderOpen } from "lucide-react";
 import projects from "@/project_article/project_list";
 import { getProjectString } from "@/model/project";
-import { useTranslation } from "react-i18next";
 
 export default function Portfolio(): JSX.Element {
-  const { t } = useTranslation();
   return (
     <div className="container mx-auto px-6 py-8">
       <div className="max-w-6xl">
         <h1 className="text-3xl font-bold text-gray-900 mb-8">
-          {t('portfolio.title')}
+          Portfolio
         </h1>
 
         <p className="text-lg text-gray-600 mb-12">
-          {t('portfolio.description')}
+          The projects below highlight my individual development work.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
