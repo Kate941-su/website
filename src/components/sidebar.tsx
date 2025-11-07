@@ -19,7 +19,7 @@ import { CircleAvatar } from "@/components/circle-avatar";
 
 const navigation = [
   { label: "About", href: "/", icon: User },
-  { label: "Portfolio", href: "/portfolio", icon: BookOpen },
+  // { label: "Portfolio", href: "/portfolio", icon: BookOpen },
   { label: "Blog", href: "/blog", icon: FolderOpen },
   { label: "CV", href: "/cv", icon: PenTool },
 ];

@@ -8,7 +8,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Kaito Kitaya Website",
-  description: "OSS saves our culture and our future",
+  description: "My thoughts and point of views",
+  icons: {
+    icon: "/img/favicon.ico",
+  },
 };
 
 export default function RootLayout({

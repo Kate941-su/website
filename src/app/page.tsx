@@ -9,11 +9,16 @@ export default function Home(): JSX.Element {
         {/* Hero Section */}
         <section className="mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Welcome to My Website! 👋
+            I am Kaito Kitaya 👋
           </h1>
           <p className="text-lg text-gray-600 leading-relaxed mb-6">
-            I am a software engineer from Japan 🇯🇵 now living in Germany 🇩🇪.
-            I have worked professionally since 2021 and spend most of my time building mobile applications.
+            I am a software engineer from Japan🇯🇵. Now I live in Germany🇩🇪.<br/>
+            I have worked professionally as a software engineer since 2021.
+            I have strong knowledge in mobile application development with Flutter, Swift, Kotlin.
+            But my enthusiasm is beyond mobile application development. I also develop web applications with React, Next.js.
+            My strength is not only development but also design and architecture. I can design and architect web applications and mobile applications.
+            as the sofware developer desire. My creativity things are supposed to used for any developers in the world so that I only create my softwares as open source software.
+            This is what I want to contribute to the world.
           </p>
         </section>
     
@@ -101,7 +106,7 @@ export default function Home(): JSX.Element {
              - <span className="font-semibold text-blue-600 group-hover:underline">TimberJ</span>: Kotlin Like Logger for Typescript developers
         </a>
          <a
-           href="https://github.com/Kate941-su/QRCodeGenExt"
+           href="https://chromewebstore.google.com/detail/qr-code-generator/hanligmhempdkemnppnngllpjbcblepk"
            className="group block text-sm text-gray-700 hover:text-yellow-600 mb-2"
            target="_blank"
            rel="noopener noreferrer"
