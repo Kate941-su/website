@@ -208,3 +208,16 @@ If you have any questions or need help setting up your portfolio:
 ---
 
 Built with ❤️ for the academic community
+
+# How to update github.io page?
+
+1. Modify `next.config.js` like below.
+```
+  basePath: '/website', // Production mode
+  assetPrefix:'/website/',// Production mode
+  // basePath: '', Debug mode
+  // assetPrefix:'', Debug mode 
+```
+
+
+2. Just push the code to `main` branch.
