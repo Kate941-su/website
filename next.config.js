@@ -8,7 +8,7 @@ const nextConfig = {
   distDir: "dist",
   trailingSlash: true,
   basePath: '/website',
-  basePath: '',
+  // basePath: '',
 };
 
 module.exports = nextConfig;
