@@ -62,9 +62,6 @@ export const Sidebar = (): JSX.Element => {
         <div className="flex flex-col h-full">
           {/* Profile Section */}
           <div className="p-6 text-center border-b border-gray-200">
-            <div className="mx-auto mb-4 flex justify-center">
-              <CircleAvatar src="/img/profile.jpg" alt="Kaito Kitaya" size={128} />
-            </div>
             <h1 className="text-xl font-semibold text-gray-900">
               Kaito Kitaya
             </h1>

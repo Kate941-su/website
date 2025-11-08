@@ -122,46 +122,6 @@ export default function Home(): JSX.Element {
              - <span className="font-semibold text-blue-600 group-hover:underline">Resumaker core</span>: Resume maker by Json or Yaml file
         </a>
     </div>
-
-
-        {/* Research Interests */}
-        {/* <section className="mb-12">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-            My interests
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {researchAreas.map((area) => (
-              <Card key={area.title}>
-                <CardContent className="p-6">
-                  <h3 className="font-semibold text-gray-900 mb-2">
-                    {area.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm">
-                    {area.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section> */}
-
-        {/* Recent Updates */}
-        {/* <section>
-          <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-            Recent Updates
-          </h2>
-          <div className="space-y-4">
-            {recentUpdates.map((update) => (
-              <div
-                key={update.label}
-                className={`border-l-4 pl-4 ${update.accentClass}`}
-              >
-                <p className="text-sm text-gray-500 mb-1">{update.label}</p>
-                <p className="text-gray-900">{update.description}</p>
-              </div>
-            ))}
-          </div>
-        </section> */}
       </div>
     </div>
   );
