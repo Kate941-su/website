@@ -23,7 +23,7 @@ export default function Portfolio(): JSX.Element {
                         Privacy Policy for Data Folder
                     </h1>
                     <p className="mt-2 text-lg text-gray-500">
-                        Provided by [Your Developer Name/Company Name, e.g., Independent Developer, Inc.]
+                        Provided by Kaito Kitaya
                     </p>
                 </header>
 
@@ -149,7 +149,7 @@ export default function Portfolio(): JSX.Element {
 
                     <div className="mt-4 p-4 bg-indigo-50 border-l-4 border-indigo-400 rounded-md">
                         <p className="font-bold text-indigo-800">Email:</p>
-                        <p className="text-indigo-900">kworkshere@gmail.com</p>
+                        <p className="text-indigo-900">kaito.kitaya.personal@gmail.com</p>
                     </div>
                 </section>
 
