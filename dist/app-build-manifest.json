@@ -11,20 +11,10 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/cv/page": [
+    "/privacypolicy/datafolder/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/cv/page.js"
-    ],
-    "/blog/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/blog/page.js"
-    ],
-    "/blog/[id]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/blog/[id]/page.js"
+      "static/chunks/app/privacypolicy/datafolder/page.js"
     ]
   }
 }
